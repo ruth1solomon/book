@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 import butterfly from './Images/Butterfly1.png';
+import BridalServices from './BridalServices';
 
 const AppointmentForm = () => {
   const [formData, setFormData] = useState({
@@ -16,13 +17,13 @@ const AppointmentForm = () => {
   const [alert, setAlert] = useState({ message: '', type: '' }); // For success/error messages
 
   const servicesList = [
-    'Bridal Makeup',
+    'Golden Bridal ',
+    'Premium Bridal ',  
+    'Silver Studio',
+    'Golden Studio',
+    'Platinium Studio',
+    'Refreshment',
     'Natural Makeup',
-    'Hair Styling',
-    'Facial Treatment',
-    'Manicure',
-    'Pedicure',
-    'Lashes',
   ];
 
   // Fetch existing appointments on component mount
@@ -253,16 +254,16 @@ const AppointmentForm = () => {
 </div>
       </form>
       
-  <div className="flex">
+  
+
+<BridalServices/>
+<div className="flex">
    <img
     src={butterfly}
     alt="Butterfly"
     className="w-full max-w-md h-auto ml-auto"
   />
 </div>
-
-
-
     </div>
   );
 };

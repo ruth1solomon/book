@@ -172,10 +172,13 @@ const EditAppointmentModal = ({
               <option value="" disabled>
                 Select a Service
               </option>
-              <option value="Bridal Makeup">Bridal Makeup</option>
+              <option value="Golden Bridal">Golden Bridal</option>
+              <option value="Premium Bridal">Premium Bridal</option>
+              <option value="Silver Studio">Silver Studio</option>
+              <option value="Golden Studio">Golden Studio</option>
+              <option value="Platinium Studio">Platinium Studio</option>
+              <option value="Refreshment">Refreshment</option>
               <option value="Natural Makeup">Natural Makeup</option>
-              <option value="Manicure">Manicure</option>
-              <option value="Hair Styling">Hair Styling</option>
             </select>
           </div>
           <div className="mb-4">

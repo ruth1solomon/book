@@ -16,7 +16,8 @@ module.exports = {
      'light-chocolate': '#6B4F31',
      'gold':'#D4AF37',
      'warm-tan':'#D8C1A0',
-     'burgendy':'#8B3A3A'
+     'burgendy':'#8B3A3A',
+     'golden': '#FFD700'
    },},
   },
   plugins: [],
