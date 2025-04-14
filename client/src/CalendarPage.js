@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { format, isSameDay, startOfMonth, endOfMonth, addMonths, subMonths, startOfWeek, addDays } from 'date-fns';
 import axios from 'axios';
 import Navbar from './Navbar';
-import butterfly from './Images/Butterfly1.png';
+import butterfly from './Images/dd.png';
 
 const CalendarPage = () => {
   const [appointments, setAppointments] = useState([]);
@@ -64,7 +64,7 @@ const CalendarPage = () => {
         key={index}
         className={`p-3 h-16 w-16 flex items-center justify-center cursor-pointer 
         ${isSameDay(day, selectedDate) ? 'bg-blue-400 text-white' : ''}
-        ${isBooked(day) ? 'bg-pink-500 text-white' : 'bg-gray-200'}
+        ${isBooked(day) ? 'bg-burgendy text-white' : 'bg-gray-200'}
         hover:bg-gray-300 rounded-md text-sm`}
         onClick={() => handleDateClick(day)}
       >
@@ -76,7 +76,7 @@ const CalendarPage = () => {
   return (
     <div>
       <Navbar/>
-      <div className="container mx-auto p-4 bg-white text-black">
+      <div className="container mx-auto p-4 bg-soft-coral text-black">
         <h2 className="text-2xl font-bold mb-4 text-center">Appointment Calendar</h2>
         <div className="flex items-center justify-between mb-4">
           <button onClick={handlePreviousMonth} className="text-lg font-bold">{'<'}</button>
@@ -104,9 +104,12 @@ const CalendarPage = () => {
                 {appointmentsOnSelectedDate.map(appointment => (
                   <li key={appointment._id} className="bg-gray-300 p-2 rounded mb-1">
                     <strong>Name:</strong> {appointment.fullName} <br />
-                    <strong>Time:</strong> {appointment.time} <br />
                     <strong>Phone Number:</strong> {appointment.phoneNumber}<br/>
-                    <strong>Status:</strong>{appointment.status}
+                    <strong>Time:</strong> {appointment.time} <br />
+                    <strong>Service:</strong> {appointment.service} <br />
+                    <strong>Status:</strong>{appointment.status}<br/>
+                    <strong >Payment:</strong>{appointment.payment}<br/>
+                    <strong>Discount:</strong> {appointment.discount}% <br />
                   </li>
                 ))}
               </ul>

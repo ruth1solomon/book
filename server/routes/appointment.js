@@ -13,27 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Mark Appointment as Done
-/*router.put('/:id/done', async (req, res) => {
-  try {
-    await Appointment.findByIdAndUpdate(req.params.id, { status: 'Done' });
-    res.status(200).json({ message: 'Appointment marked as done',appointment });
-  } catch (err) {
-    res.status(500).json({ message: 'Error updating appointment', error: err });
-  }
-});
-router.get('/done', async (req, res) => {
-  try {
-    const doneAppointments = await Appointment.find({ status: 'Done' });
-    res.status(200).json(doneAppointments);
-  } catch (err) {
-    res.status(500).json({ message: 'Error fetching done appointments', error: err.message });
-  }
-});*/
 
-
-
-// Mark an appointment as done
 router.put('/:id/done', async (req, res) => {
   try {
     const appointment = await Appointment.findByIdAndUpdate(
@@ -90,16 +70,20 @@ router.post('/create', async (req, res) => {
 });
 
 
+
+
+
+/*
 // Edit Appointment
 router.put('/:id', async (req, res) => {
   const { id } = req.params; // Extract the appointment ID from the URL
-  const { fullName, phoneNumber, date, time, service, payment } = req.body; // Extract the updated fields from the request body
+  const { fullName, phoneNumber, date, time, service, payment, paidAmount, discount } = req.body; // Extract the updated fields from the request body
 
   try {
     // Find the appointment by ID and update it with new data
     const updatedAppointment = await Appointment.findByIdAndUpdate(
       id,
-      { fullName, phoneNumber, date, time, service, payment },
+      { fullName, phoneNumber, date, time, service, payment,paidAmount, discount },
       { new: true, runValidators: true } // Return the updated document and run schema validators
     );
 
@@ -120,8 +104,23 @@ router.put('/:id', async (req, res) => {
       error: error.message,
     });
   }
+});*/
+// PUT /api/appointments/:id
+router.put('/:id', async (req, res) => {
+  try {
+    const updated = await Appointment.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true } // ✅ returns the updated document
+    );
+    if (!updated) {
+      return res.status(404).json({ message: 'Appointment not found' });
+    }
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to update appointment', error: err.message });
+  }
 });
-
 
 module.exports = router;
 

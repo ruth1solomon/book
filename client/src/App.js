@@ -7,10 +7,12 @@ import CalendarPage from './CalendarPage';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import HomePage from './HomePage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className='bg-rose-50'>
+    <div className='bg-soft-coral'>
     <BrowserRouter>
       <Routes >
         <Route path="/" element={<HomePage />} />
@@ -22,6 +24,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
+    <ToastContainer />
     </div>
   );
 }

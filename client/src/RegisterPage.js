@@ -32,9 +32,9 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-200 to-purple-300 flex justify-center items-center">
+    <div className="min-h-screen bg-soft-pink flex justify-center items-center">
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-6 text-pink-600">Register</h1>
+        <h1 className="text-3xl font-bold text-center mb-6 text-black">Register</h1>
         <input
           type="text"
           name="fullName"
@@ -80,10 +80,10 @@ const RegisterPage = () => {
           className="w-full p-4 mb-4 border border-gray-300 rounded-lg"
           required
         />
-        <button type="submit" className="w-full bg-pink-600 text-white py-4 rounded-lg hover:bg-pink-700 transition duration-300 ease-in-out">Register</button>
+        <button type="submit" className=" bg-burgendy  ml-36 px-6 py-2 rounded-2xl text-white font-medium hover:bg-gold mt-2  transition duration-300 ease-in-out">Register</button>
       
       <p className="text-center mt-4 text-gray-500">
-        Already have an account? <Link to="/login" className="text-pink-600 hover:underline">Login</Link>
+        Already have an account? <Link to="/login" className="text-burgendy hover:underline">Login</Link>
       </p>
       </form>
     </div>

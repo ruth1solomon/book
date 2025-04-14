@@ -34,11 +34,11 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-gradient-to-br from-pink-200 to-purple-300 flex flex-col items-center justify-center">
+    <div className="min-h-screen  bg-soft-pink flex flex-col items-center justify-center">
        
       
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-6 text-pink-600">Login</h1>
+        <h1 className="text-3xl font-bold text-center mb-6 text-black">Login</h1>
         <input
           type="email"
           name="email"
@@ -54,17 +54,17 @@ const LoginPage = () => {
           value={password}
           onChange={handleChange}
           placeholder="Password"
-          className="w-full p-4 mb-6 border border-gray-300 rounded-lg"
+          className="w-full p-4 mb-6 border  border-gray-300 rounded-lg"
         />
         
-        <button type="submit" className="w-full bg-pink-600 text-white py-4 rounded-lg hover:bg-pink-700 transition duration-300 ease-in-out">Login</button>
+        <button type="submit" className="  bg-burgendy  ml-36 px-8 py-2 rounded-2xl text-white font-medium hover:bg-gold mt-2  transition duration-300 ease-in-out">Login</button>
         {errorMessage && (
                     <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-center">
                         {errorMessage}
                     </div>
                 )}
       <p className="text-center mt-4 text-gray-500">
-        Don't have an account? <Link to="/register" className="text-pink-600 hover:underline">Register</Link>
+        Don't have an account? <Link to="/register" className="text-burgendy hover:underline">Register</Link>
       </p>
       </form>
       
